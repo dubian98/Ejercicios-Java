@@ -1,6 +1,7 @@
 package ejercicios;
 
 import javax.swing.JOptionPane;
+import static jdk.nashorn.internal.objects.NativeString.length;
 import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
 
 public class Ejercicios {
@@ -16,7 +17,11 @@ public class Ejercicios {
 
         estatura = estatura * 1000;
         
-        JOptionPane.showMessageDialog(null, " Nombre: " + toUpperCase(nombre) + "\n Edad: " + Math.pow(edad, 3) + "\n Estatura: " + estatura + "mm");
+        JOptionPane.showMessageDialog(null, " Nombre: " + toUpperCase(nombre) + 
+                "\n Edad: " + Math.pow(edad, 3) + 
+                "\n Estatura: " + estatura + "mm" + 
+                "\n Raiz Cubica edad: " + Math.cbrt(edad)+
+                "\n Letras del nombre: " + length(nombre));
     }
     
 }
