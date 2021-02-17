@@ -1,8 +1,8 @@
 package ejercicios;
 
 import javax.swing.JOptionPane;
-import static jdk.nashorn.internal.objects.NativeString.length;
-import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
+import static jdk.nashorn.internal.objects.NativeString.*;
+
 
 public class Ejercicios {
 
