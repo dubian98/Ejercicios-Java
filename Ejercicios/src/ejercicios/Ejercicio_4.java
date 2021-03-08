@@ -28,8 +28,12 @@ public class Ejercicio_4 {
         double valor_hora[] = new double[cantidad_trabajadores];
         
         /*Creo variables para realizar calculos con respecto al salario y cantidad de letras de los nombres*/
-        double total_pago,recargo, promedio_salario = 0, acumulador = 0, acumulador_letras = 0;
+        double recargo, promedio_salario = 0, acumulador = 0, acumulador_letras = 0, mayor_salario = 0;
+        int indice = 0;
         boolean r;
+        
+        
+        double total_pago[] = new double[cantidad_trabajadores];
         
         /*Ciclo para ingresar, calcular y evaluar los datos*/
         for(int i = 0; i < cantidad_trabajadores; i++){
@@ -41,27 +45,42 @@ public class Ejercicio_4 {
                 recargo = valor_hora[i] * 0.25;
                 valor_hora[i] = valor_hora[i] + recargo;
                 
-                total_pago = valor_hora[i] * horas_trabajadas[i];
+                total_pago[i] = valor_hora[i] * horas_trabajadas[i];
                 
                 r = true;
             }else{
-                total_pago = valor_hora[i] * horas_trabajadas[i];
+                total_pago[i] = valor_hora[i] * horas_trabajadas[i];
                 
                 r = false;
             }
             
-            acumulador = acumulador + total_pago;
+            if(total_pago[i] > mayor_salario){
+                mayor_salario = total_pago[i];
+            }
+            
+            
+            acumulador = acumulador + total_pago[i];
             promedio_salario = acumulador / cantidad_trabajadores;
             
             acumulador_letras = acumulador_letras + nombre[i].length();
             
             JOptionPane.showMessageDialog(null, "Nombre: " + nombre[i] + "\n Horas Trabajadas: " + horas_trabajadas[i] +
-            "\n Valor por hora: " + valor_hora[i] + "\n\n" + "Total a pagar: " + total_pago + "\nRecargo: " + r
+            "\n Valor por hora: " + valor_hora[i] + "\n\n" + "Total a pagar: " + total_pago[i] + "\nRecargo: " + r
             );
         }
+        
+        for(int x = 0; x < cantidad_trabajadores; x++){
+            if(total_pago[x] == mayor_salario){
+                indice = x;
+                break;
+            }
+        }
+        
+        
     
         JOptionPane.showMessageDialog(null, "Promedio de salario: " + promedio_salario + "\nTotal pagado por la empresa : " + acumulador +
-        "\nTotal de letras de los nombres: " + acumulador_letras);
+        "\nTotal de letras de los nombres: " + acumulador_letras + "\n Mayor salario : " + mayor_salario + "\n\n" + "Nombre del empleado con mayor salario: "
+        + nombre[indice].toUpperCase());
         
     }
 }
