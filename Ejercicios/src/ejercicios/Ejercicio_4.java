@@ -18,20 +18,20 @@ import javax.swing.JOptionPane;
 public class Ejercicio_4 {
     public static void main(String[] args) {
         
-        /**/
+        /*Creo variable para almacenar la cantidad de trabajadores y al mismo tiempo pido al user la cantidad*/
         int cantidad_trabajadores;
         cantidad_trabajadores = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de trabajadores a calcular: "));
         
-        /**/
+        /*Creo vectores para almacenar el nombre, horas trabajadas, valor hora por trabajador*/
         String nombre[] = new String[cantidad_trabajadores];
         int horas_trabajadas[] = new int[cantidad_trabajadores];
         double valor_hora[] = new double[cantidad_trabajadores];
         
-        /**/
+        /*Creo variables para realizar calculos con respecto al salario y cantidad de letras de los nombres*/
         double total_pago,recargo, promedio_salario = 0, acumulador = 0, acumulador_letras = 0;
         boolean r;
         
-        /**/
+        /*Ciclo para ingresar, calcular y evaluar los datos*/
         for(int i = 0; i < cantidad_trabajadores; i++){
             nombre[i] = JOptionPane.showInputDialog("Ingrese el nombre del trabajador " + i +": ");
             horas_trabajadas[i] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese las horas trabajadas de " + nombre[i] +": "));
