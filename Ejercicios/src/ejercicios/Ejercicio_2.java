@@ -25,7 +25,6 @@ public class Ejercicio_2 {
             nombre = nombre.toUpperCase();
             estatura = estatura * 1000;
             flag = true;
-            
             JOptionPane.showMessageDialog(null, "Nombre: " + nombre + " Estatura: " + estatura);
 
         }else if(edad < 18 && edad >= 0){
