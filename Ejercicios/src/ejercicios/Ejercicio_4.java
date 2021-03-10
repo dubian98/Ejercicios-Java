@@ -42,10 +42,9 @@ public class Ejercicio_4 {
             valor_hora[i] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor por hora para " + nombre[i] +": "));
             
             if(horas_trabajadas[i] >= 48){
-                recargo = valor_hora[i] * 0.25;
-                valor_hora[i] = valor_hora[i] + recargo;
+                recargo = valor_hora[i] * 0.25 * (horas_trabajadas[i] - 48);
                 
-                total_pago[i] = valor_hora[i] * horas_trabajadas[i];
+                total_pago[i] = valor_hora[i] * horas_trabajadas[i] + recargo;
                 
                 r = true;
             }else{
