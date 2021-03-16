@@ -9,8 +9,12 @@ import javax.swing.JOptionPane;
 
 public class ejercicio_3 {
     public static void main(String[] args) {
-        /*Variables*/
+        /*Constantes*/
         final int estudiantes = 30;
+        
+        /*Variables*/
+        double acumulador = 0, promedio = 0;
+        int contador_perdedores = 0, porcentaje_perdedores;
         
         /*Formato para solo imprimir 2 numeros decimales*/
         DecimalFormat formato = new DecimalFormat("#.00");
@@ -30,9 +34,29 @@ public class ejercicio_3 {
             
             definitiva[i] = (nota1[i] * 0.25) + (nota2[i] * 0.2) + (nota3[i] * 0.25) + (nota4[i] * 0.3);
             
+            if(definitiva[i] < 3.0){
+                contador_perdedores++;
+            }
+            
+            acumulador = acumulador + definitiva[i];
+            
             JOptionPane.showMessageDialog(null,"La nota definitiva para el estudiante #" + i + " es de: " + formato.format(definitiva[i]));
+            
+            /*Centinela*/
+            System.out.println(contador_perdedores);
                     
         }
+        
+        promedio = acumulador / estudiantes;
+        
+        /*CORREGIR!!!!!!!!!!!!!!!! No funciona, retorna 0*/
+        porcentaje_perdedores = (contador_perdedores / estudiantes) * 100;
+        /*-------------------------------------------------*/
+        
+        /*Centinela 2*/
+        System.out.println(porcentaje_perdedores);
+        
+        JOptionPane.showMessageDialog(null,"Resultados:" + "\nNota promedio: " + promedio + "\nPorcentaje Perdedores: " + porcentaje_perdedores + "%");
         
     }  
 }
