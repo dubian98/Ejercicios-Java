@@ -7,20 +7,22 @@ package taller_1;
 
 import javax.swing.JOptionPane;
 
-public class ejercicio_1 {
-    public static void main(String[] args) {
+public class Ejercicio_1 {
+
+
+    public void notasAsignatura() {
         /*Variables*/
         int cantidad_estudiantes = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de estudiantes a calcular: "));
         int ganan = 0, habilitan = 0, pierden = 0;
-        
+
         /*Vectores*/
         String nombre_estudiantes[] = new String[cantidad_estudiantes];
         double notas_estudiantes[] = new double[cantidad_estudiantes];
-        
+
         for(int i = 0; i < cantidad_estudiantes; i++){
             nombre_estudiantes[i] = JOptionPane.showInputDialog("Ingrese el nombre del estudiante #" + i +": ");
             notas_estudiantes[i] = Double.parseDouble(JOptionPane.showInputDialog("Ingrese la nota para " + nombre_estudiantes[i] + ": "));
-            
+
             if(notas_estudiantes[i] >= 0 && notas_estudiantes[i] < 2){
                 JOptionPane.showMessageDialog(null,"Perdio la materia");
                 pierden++;
@@ -32,8 +34,10 @@ public class ejercicio_1 {
                 ganan++;
             }
         }
-        
+
         JOptionPane.showMessageDialog(null,"Resultados: "+"\nPierden: "+ pierden +"\nHabilitan: " + habilitan + "\nGanan: " + ganan );
-        
+
     }
+
+
 }
