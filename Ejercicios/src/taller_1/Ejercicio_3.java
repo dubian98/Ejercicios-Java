@@ -58,7 +58,7 @@ public class Ejercicio_3 {
 
 
 
-        porcentaje_perdedores = Double.parseDouble(contador_perdedores / estudiantes);
+        //porcentaje_perdedores = Double.parseDouble(contador_perdedores / estudiantes);
         /*Centinela*/
         System.out.println(contador_perdedores);
         /*-------------------------------------------------*/
