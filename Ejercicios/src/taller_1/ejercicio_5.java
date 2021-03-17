@@ -8,8 +8,20 @@ N, calculándolos solamente con sumas como las que se proponen a continuación.
 
 package taller_1;
 
+import javax.swing.JOptionPane;
+
 public class ejercicio_5 {
     public static void main(String[] args) {
+        
+        /*Variables*/
+        int numero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero: "));
+        int contador = 1, resultado = 0;
+        
+        for(int i = 1; i <= numero; i++){
+            resultado = resultado + contador;
+            contador = contador + 2;
+            System.out.println("El cuadrado de "+ i + " es: " + resultado);
+        }
         
     }  
 }
