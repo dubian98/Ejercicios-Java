@@ -9,15 +9,15 @@ import javax.swing.JOptionPane;
 
 public class Ejercicio_3 {
 
-    public static int contador_perdedores;
-    static int porcentaje_perdedores;
-
     public void notasEstudiantes() {
+
         /*Constantes*/
         final int estudiantes = 5;
 
         /*Variables*/
         double acumulador = 0, promedio = 0;
+        double contador_perdedores = 0;
+        double porcentaje_perdedores;
 
 
 
@@ -40,7 +40,7 @@ public class Ejercicio_3 {
             definitiva[i] = (nota1[i] * 0.25) + (nota2[i] * 0.2) + (nota3[i] * 0.25) + (nota4[i] * 0.3);
 
             if(definitiva[i] < 3.0){
-                contador_perdedores += 1;
+                contador_perdedores++;
             }
 
             acumulador = acumulador + definitiva[i];
@@ -54,17 +54,9 @@ public class Ejercicio_3 {
 
         promedio = acumulador / estudiantes;
 
-        /*CORREGIR!!!!!!!!!!!!!!!! No funciona, retorna 0*/
+        porcentaje_perdedores = (contador_perdedores / estudiantes) * 100;
 
 
-
-        //porcentaje_perdedores = Double.parseDouble(contador_perdedores / estudiantes);
-        /*Centinela*/
-        System.out.println(contador_perdedores);
-        /*-------------------------------------------------*/
-
-        /*Centinela 2*/
-        System.out.println(" centinela 2 " + porcentaje_perdedores);
 
         JOptionPane.showMessageDialog(null,"Resultados:" + "\nNota promedio: " + promedio + "\nPorcentaje Perdedores: " + porcentaje_perdedores + "%");
 
